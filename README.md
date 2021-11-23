@@ -1,8 +1,7 @@
-# Template for Speaker Identification
+# MINFO Speaker Identification
   
-This folder provides a working, well-documented example for training
-a speaker identification model from scratch, based on a few hours of
-data. The data we use is from Mini Librispeech + OpenRIR.
+Based on a few hours of
+data you can train ur model. The data we use is from Mini Librispeech + OpenRIR.
 
 There are four files here:
 
@@ -20,12 +19,4 @@ python train.py train.yaml
 This will automatically download and prepare the data manifest for mini
 librispeech, and then train a model with dynamically augmented samples.
 
-More details about what each file does and how to make modifications
-are found within each file. The whole folder can be copied and used
-as a starting point for developing recipes doing classification tasks
-similar to speech speaker-id (e.g, language-id, emotion classification, ..).
-Please reach out to the SpeechBrain
-team if any errors are found or clarification is needed about how
-parts of the template work. Good Luck!
-
-[For more information, please take a look into the "speaker-id from scratch" tutorial](https://colab.research.google.com/drive/1UwisnAjr8nQF3UnrkIJ4abBMAWzVwBMh?usp=sharing)
+[This project can be executed and tested here. You will get more details and explanation i provided](https://colab.research.google.com/drive/1TY_810bXDt1h7Iz7iXQ6xF5jZ1YJFFwL?usp=sharing)
