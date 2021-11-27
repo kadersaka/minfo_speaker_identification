@@ -240,8 +240,19 @@ def dataio_prep(hparams):
     @sb.utils.data_pipeline.provides("spk_id", "spk_id_encoded")
     def label_pipeline(spk_id):
         yield spk_id
-        spk_id_encoded = label_encoder.encode_label_torch(spk_id)
-        yield spk_id_encoded
+        print("--------------speaker id is:"+ spk_id)
+        try:
+            spk_id_encoded = label_encoder.encode_label_torch(spk_id)
+            print("--------------speaker id encoded:"+ spk_id_encoded)
+            yield spk_id_encoded
+
+        except KeyError:
+            print(spk_id+" is not in the encoder this raises an error!")
+            label_encoder.add_unk()
+            spk_id_encoded = label_encoder.encode_label_torch(spk_id)
+            print("--------------speaker id encoded:"+ spk_id_encoded)
+            yield spk_id_encoded
+
 
     # Define datasets. We also connect the dataset with the data processing
     # functions defined above.
