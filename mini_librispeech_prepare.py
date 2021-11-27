@@ -195,5 +195,8 @@ def download_mini_librispeech(destination):
         Place to put dataset.
     """
     train_archive = os.path.join(destination, "train-clean-5.tar.gz")
-    download_file(MINILIBRI_TRAIN_URL, train_archive)
-    shutil.unpack_archive(train_archive, destination)
+    # download_file(MINILIBRI_TRAIN_URL, train_archive)
+    # shutil.unpack_archive(train_archive, destination)
+
+    download_file(MINILIBRI_TRAIN_URL, destination)
+    # shutil.unpack_archive(train_archive, destination)
