@@ -17,6 +17,7 @@ from speechbrain.utils.data_utils import get_all_files, download_file
 from speechbrain.dataio.dataio import read_audio
 
 logger = logging.getLogger(__name__)
+# MINILIBRI_TRAIN_URL = "http://www.openslr.org/resources/31/train-clean-5.tar.gz"
 MINILIBRI_TRAIN_URL = "http://www.openslr.org/resources/31/train-clean-5.tar.gz"
 SAMPLERATE = 16000
 
@@ -61,7 +62,8 @@ def prepare_mini_librispeech(
         return
 
     # If the dataset doesn't exist yet, download it
-    train_folder = os.path.join(data_folder, "LibriSpeech", "train-clean-5")
+    # train_folder = os.path.join(data_folder, "LibriSpeech", "train-clean-5")
+    train_folder = data_folder
     if not check_folders(train_folder):
         download_mini_librispeech(data_folder)
 
