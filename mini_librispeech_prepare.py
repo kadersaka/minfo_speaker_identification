@@ -77,7 +77,7 @@ def prepare_mini_librispeech(
     # Random split the signal list into train, valid, and test sets.
     data_split = split_sets(wav_list, split_ratio)
 
-    # Creating json files
+    # Creating json files 1Ivers@l
     create_json(data_split["train"], save_json_train)
     create_json(data_split["valid"], save_json_valid)
     create_json(data_split["test"], save_json_test)
@@ -103,12 +103,19 @@ def create_json(wav_list, json_file):
         duration = signal.shape[0] / SAMPLERATE
 
         # Manipulate path to get relative path and uttid
+        # path_parts = wav_file.split(os.path.sep)
+        # uttid, _ = os.path.splitext(path_parts[-1])
+        # relative_path = os.path.join("{data_root}", *path_parts[-5:])
+
         path_parts = wav_file.split(os.path.sep)
         uttid, _ = os.path.splitext(path_parts[-1])
-        relative_path = os.path.join("{data_root}", *path_parts[-5:])
+        relative_path = os.path.join("{data_root}", *path_parts[-2:])
+
+        parts = os.path.splitext(path_parts[-1])
 
         # Getting speaker-id from utterance-id
-        spk_id = uttid.split("-")[0]
+        # spk_id = uttid.split("-")[0]
+        spk_id = path_parts[len(path_parts)-2]
 
         # Create entry for this utterance
         json_dict[uttid] = {
