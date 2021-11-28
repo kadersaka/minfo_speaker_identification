@@ -287,6 +287,8 @@ if __name__ == "__main__":
     # Reading command line arguments.
     hparams_file, run_opts, overrides = sb.parse_arguments(sys.argv[1:])
 
+    print("------------------hparams file")
+    print(hparams_file)
     # Initialize ddp (useful only for multi-GPU DDP training).
     sb.utils.distributed.ddp_init_group(run_opts)
 
