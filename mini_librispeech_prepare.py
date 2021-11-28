@@ -74,6 +74,9 @@ def prepare_mini_librispeech(
     extension = [".flac"]
     wav_list = get_all_files(train_folder, match_and=extension)
 
+    print("-------------------all files wav_list :")
+    print(wav_list)
+
     # Random split the signal list into train, valid, and test sets.
     data_split = split_sets(wav_list, split_ratio)
 
@@ -95,9 +98,16 @@ def create_json(wav_list, json_file):
         The path of the output json file
     """
     # Processing all the wav files in the list
+    print("-----------------------wav_list :")
+    print(wav_list)
+
+    print("-----------------------json_file :")
+    print(json_file)
+
     json_dict = {}
     for wav_file in wav_list:
-
+        print("-----------------------wav_file :")
+        print(wav_file)
         # Reading the signal (to retrieve duration in seconds)
         signal = read_audio(wav_file)
         duration = signal.shape[0] / SAMPLERATE
