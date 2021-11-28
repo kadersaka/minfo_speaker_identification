@@ -76,6 +76,7 @@ def prepare_mini_librispeech(
 
     print("-------------------all files wav_list :")
     print(wav_list)
+    print(len(wav_list))
 
     # Random split the signal list into train, valid, and test sets.
     data_split = split_sets(wav_list, split_ratio)
@@ -100,6 +101,7 @@ def create_json(wav_list, json_file):
     # Processing all the wav files in the list
     print("-----------------------wav_list :")
     print(wav_list)
+    print(len(wav_list))
 
     print("-----------------------json_file :")
     print(json_file)
