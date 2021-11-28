@@ -243,14 +243,16 @@ def dataio_prep(hparams):
         print("--------------speaker id is:"+ spk_id)
         try:
             spk_id_encoded = label_encoder.encode_label_torch(spk_id)
-            print("--------------speaker id encoded:"+ spk_id_encoded)
+            print("--------------speaker id encoded 1:")
+            print(spk_id_encoded)
             yield spk_id_encoded
 
         except KeyError:
             print(spk_id+" is not in the encoder this raises an error!")
             label_encoder.add_unk()
             spk_id_encoded = label_encoder.encode_label_torch(spk_id)
-            print("--------------speaker id encoded:"+ spk_id_encoded)
+            print("--------------speaker id encoded 2:")
+            print(spk_id_encoded)
             yield spk_id_encoded
 
 
