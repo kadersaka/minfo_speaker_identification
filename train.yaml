@@ -49,7 +49,8 @@ batch_size: 16
 lr_start: 0.001
 lr_final: 0.0001
 #n_classes: 28 # In this case, we have 28 speakers
-n_classes: 34 # In this case, we have 34 speakers
+#n_classes: 34 # In this case, we have 28 speakers
+n_classes: 26 # In this case, we have 34 speakers
 emb_dim: 512 # dimensionality of the embeddings
 dataloader_options:
     batch_size: !ref <batch_size>
